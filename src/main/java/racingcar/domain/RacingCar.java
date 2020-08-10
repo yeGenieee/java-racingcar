@@ -1,8 +1,4 @@
-package racingcar.model;
-
-import java.util.List;
-import java.util.function.Predicate;
-import java.util.regex.Pattern;
+package racingcar.domain;
 
 public class RacingCar implements Comparable<RacingCar> {
 
@@ -34,11 +30,8 @@ public class RacingCar implements Comparable<RacingCar> {
         return carName;
     }
 
-    public static boolean validateCarName(List<String> racingCarNameList) {
-        Predicate<String> carNamePattern = Pattern
-                .compile(racingCarNamePattern)
-                .asPredicate();
-        return racingCarNameList.stream().allMatch(carNamePattern);
+    public static boolean validateCarName(String racingCarName) {
+        return racingCarName.matches(racingCarNamePattern);
     }
 
     public boolean isSamePosition(RacingCar other) {
