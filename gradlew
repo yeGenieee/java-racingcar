@@ -6,7 +6,7 @@
 ##
 ##############################################################################
 
-# Attempt to set APP_HOME
+# Attempt to step1.set APP_HOME
 # Resolve links: $0 may be a link
 PRG="$0"
 # Need this for relative symlinks.
@@ -30,7 +30,7 @@ APP_BASE_NAME=`basename "$0"`
 # Add default JVM options here. You can also use JAVA_OPTS and GRADLE_OPTS to pass JVM options to this script.
 DEFAULT_JVM_OPTS='"-Xmx64m"'
 
-# Use the maximum available, or set MAX_FD != -1 to use that value.
+# Use the maximum available, or step1.set MAX_FD != -1 to use that value.
 MAX_FD="maximum"
 
 warn () {
@@ -141,16 +141,16 @@ if $cygwin ; then
         i=$((i+1))
     done
     case $i in
-        (0) set -- ;;
-        (1) set -- "$args0" ;;
-        (2) set -- "$args0" "$args1" ;;
-        (3) set -- "$args0" "$args1" "$args2" ;;
-        (4) set -- "$args0" "$args1" "$args2" "$args3" ;;
-        (5) set -- "$args0" "$args1" "$args2" "$args3" "$args4" ;;
-        (6) set -- "$args0" "$args1" "$args2" "$args3" "$args4" "$args5" ;;
-        (7) set -- "$args0" "$args1" "$args2" "$args3" "$args4" "$args5" "$args6" ;;
-        (8) set -- "$args0" "$args1" "$args2" "$args3" "$args4" "$args5" "$args6" "$args7" ;;
-        (9) set -- "$args0" "$args1" "$args2" "$args3" "$args4" "$args5" "$args6" "$args7" "$args8" ;;
+        (0) step1.set -- ;;
+        (1) step1.set -- "$args0" ;;
+        (2) step1.set -- "$args0" "$args1" ;;
+        (3) step1.set -- "$args0" "$args1" "$args2" ;;
+        (4) step1.set -- "$args0" "$args1" "$args2" "$args3" ;;
+        (5) step1.set -- "$args0" "$args1" "$args2" "$args3" "$args4" ;;
+        (6) step1.set -- "$args0" "$args1" "$args2" "$args3" "$args4" "$args5" ;;
+        (7) step1.set -- "$args0" "$args1" "$args2" "$args3" "$args4" "$args5" "$args6" ;;
+        (8) step1.set -- "$args0" "$args1" "$args2" "$args3" "$args4" "$args5" "$args6" "$args7" ;;
+        (9) step1.set -- "$args0" "$args1" "$args2" "$args3" "$args4" "$args5" "$args6" "$args7" "$args8" ;;
     esac
 fi
 
