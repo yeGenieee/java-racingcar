@@ -5,6 +5,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.assertj.core.api.Assertions.*;
@@ -46,6 +47,13 @@ class StringCalculatorTest {
             stringCalculator.calculate(input);
         }).isInstanceOf(IllegalArgumentException.class)
                 .hasMessageContaining("사칙연산 기호가 아님");
+    }
+
+    @ParameterizedTest
+    @DisplayName("계산기 기능 테스트")
+    @CsvSource(value = {"2 + 3 * 4 / 2=10", "3 * 3 + 1 / 5=2"}, delimiter = '=')
+    void calculate(String input, int result) {
+        assertThat(stringCalculator.calculate(input)).isEqualTo(result);
     }
 
 }
