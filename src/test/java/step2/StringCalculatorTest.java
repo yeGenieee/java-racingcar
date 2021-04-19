@@ -5,6 +5,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.*;
@@ -27,4 +28,13 @@ class StringCalculatorTest {
                 .hasMessageContaining("입력값이 null 이거나 빈 문자열");
     }
 
+    @ParameterizedTest
+    @DisplayName("입력 값이 빈 문자열인 경우 테스트")
+    @ValueSource(strings = {"", "  "})
+    void input_blank(String input) {
+        assertThatThrownBy(() -> {
+            stringCalculator.calculate(input);
+        }).isInstanceOf(IllegalArgumentException.class)
+                .hasMessageContaining("입력값이 null 이거나 빈 문자열");
+    }
 }
