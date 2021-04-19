@@ -1,4 +1,4 @@
-package string;
+package step1.string;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
