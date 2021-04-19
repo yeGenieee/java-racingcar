@@ -37,4 +37,15 @@ class StringCalculatorTest {
         }).isInstanceOf(IllegalArgumentException.class)
                 .hasMessageContaining("입력값이 null 이거나 빈 문자열");
     }
+
+    @ParameterizedTest
+    @DisplayName("사칙 연산 기호가 아닌 경우 테스트")
+    @ValueSource(strings = {"2 @ 3 + 3", "1 * 4 ^ 7"})
+    void input_non_arithmetic_operator(String input) {
+        assertThatThrownBy(() -> {
+            stringCalculator.calculate(input);
+        }).isInstanceOf(IllegalArgumentException.class)
+                .hasMessageContaining("사칙연산 기호가 아님");
+    }
+
 }
